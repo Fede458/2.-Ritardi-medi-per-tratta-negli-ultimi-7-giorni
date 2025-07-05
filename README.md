@@ -2,7 +2,7 @@ Come funziona la query
 
 Si collegano le tabelle Tratta e Biglietto per associare ritardi e biglietti venduti.
 
-Si considerano solo i biglietti emessi negli ultimi 7 giorni, per concentrarsi sulle performance recenti.
+Si considereranno solo i biglietti emessi negli ultimi 7 giorni, per concentrarsi sulle performance recenti.
 
 Per ogni tratta si calcola il ritardo medio e si conta quanti biglietti sono stati venduti.
 
