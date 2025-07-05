@@ -1,0 +1,11 @@
+-- 2. Tratte con maggior ritardo medio negli ultimi 7 giorni
+SELECT 
+  T.stazione_partenza || ' → ' || T.stazione_arrivo AS tratta,
+  ROUND(AVG(T.ritardo_minuti), 2) AS ritardo_medio,
+  COUNT(B.id_biglietto) AS biglietti_venduti
+FROM Tratta T
+JOIN Biglietto B ON T.id_tratta = B.id_tratta
+WHERE B.data_emissione >= date('now', '-7 days')
+GROUP BY T.id_tratta
+HAVING ritardo_medio > 5
+ORDER BY ritardo_medio DESC;
